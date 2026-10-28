@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login — Greenwood College{% endblock %}
+
+{% block content %}
+<style>
+    /* Force centering context away from stretching parent containers */
+    .login-page-wrapper {
+        background-color: #f3f7fc !important;
+        min-height: 80vh;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 60px 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* The central card container */
+    .login-box-card {
+        background: #ffffff !important;
+        max-width: 460px !important;
+        width: 100% !important;
+        padding: 40px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        box-sizing: border-box !important;
+    }
+
+    .login-box-title {
+        color: #174a8b !important;
+        font-size: 26px !important;
+        margin: 0 0 8px 0 !important;
+        text-align: center !important;
+        font-family: Arial, sans-serif !important;
+    }
+
+    .login-box-subtitle {
+        color: #666 !important;
+        font-size: 14px !important;
+        margin: 0 0 30px 0 !important;
+        text-align: center !important;
+        font-family: Arial, sans-serif !important;
+    }
+
+    .login-box-group {
+        display: flex !important;
+        flex-direction: column !important;
+        margin-bottom: 22px !important;
+    }
+
+    .login-box-group label {
+        font-weight: 600 !important;
+        margin-bottom: 8px !important;
+        color: #344054 !important;
+        font-size: 14px !important;
+        text-align: left !important;
+    }
+
+    /* Form input fields control overrides */
+    .login-box-group input {
+        width: 100% !important;
+        padding: 12px 14px !important;
+        border: 1px solid #d0d5dd !important;
+        border-radius: 6px !important;
+        font-size: 15px !important;
+        box-sizing: border-box !important;
+        outline: none !important;
+        transition: border-color 0.2s !important;
+    }
+
+    .login-box-group input:focus {
+        border-color: #174a8b !important;
+        box-shadow: 0 0 0 3px rgba(23, 74, 139, 0.1) !important;
+    }
+
+    .login-box-error {
+        color: #dc3545 !important;
+        font-size: 13px !important;
+        margin-top: 5px !important;
+        font-weight: 500 !important;
+        text-align: left !important;
+    }
+
+    .btn-login-box {
+        width: 100% !important;
+        background-color: #174a8b !important;
+        color: white !important;
+        border: none !important;
+        padding: 14px !important;
+        border-radius: 6px !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        margin-top: 10px !important;
+        transition: background-color 0.2s !important;
+    }
+
+    .btn-login-box:hover {
+        background-color: #103d7a !important;
+    }
+
+    .login-box-signup-link {
+        text-align: center !important;
+        margin-top: 24px !important;
+        font-size: 14px !important;
+        color: #666 !important;
+    }
+
+    .login-box-signup-link a {
+        color: #174a8b !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+    }
+
+    .login-box-signup-link a:hover {
+        text-decoration: underline !important;
+    }
+</style>
+
+<!-- Main Form Context Grid -->
+<div class="login-page-wrapper">
+    <div class="login-box-card">
+        <h2 class="login-box-title">Welcome Back</h2>
+        <p class="login-box-subtitle">Log in to your Greenwood College account</p>
+        
+        <form method="post" novalidate>
+            {% csrf_token %}
+            
+            <!-- Handle wrong credentials / blocked account global flags -->
+            {% if form.non_field_errors %}
+            <div style="background-color: #fde8e8; color: #dc3545; padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 14px; text-align: left;">
+                {% for error in form.non_field_errors %}
+                <div>⚠️ {{ error }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <!-- Loop through login fields (Username and Password fields automatically mapped via AuthenticationForm) -->
+            {% for field in form %}
+            <div class="login-box-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                
+                {% for error in field.errors %}
+                <div class="login-box-error">❌ {{ error }}</div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            
+            <button type="submit" class="btn-login-box">
+                Sign In
+            </button>
+            
+            <div class="login-box-signup-link">
+                Don't have an account yet? <a href="{% url 'signup' %}">Sign up here</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

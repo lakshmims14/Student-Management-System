@@ -1,0 +1,369 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Courses — Greenwood College</title>
+  <meta name="description" content="Browse all undergraduate and postgraduate programmes offered at Greenwood College including B.Sc CS, BCA, B.Com, BBA, B.A English, and M.Sc Computer Science." />
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <link rel="icon" type="image/png" href="{% static 'images/college_logo.png' %}" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="{% static 'images/college_logo.png' %}" alt="Greenwood College Logo" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Greenwood College</span>
+          <span class="nav-logo-tagline">Est. 1998 · Excellence in Education</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="{% url 'index' %}" class="active">Home</a>
+        <a href="{% url 'courses' %}">Courses</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'contact' %}" class="nav-cta">Apply Now</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="{% url 'index' %}" class="active">Home</a>
+    <a href="{% url 'courses' %}">Courses</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="{% url 'contact' %}" class="nav-cta">Apply Now</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <div class="page-hero">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Courses</span>
+    </div>
+    <h1>Our Courses</h1>
+    <p>Discover programmes designed to shape tomorrow's leaders and innovators</p>
+  </div>
+
+  <!-- ===================== COURSES SECTION ===================== -->
+  <section class="courses-page">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Academic Programmes</span>
+        <h2 class="section-title">Explore Our <span>Programmes</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Greenwood College offers a diverse range of undergraduate and postgraduate programmes, 
+          each crafted with a blend of theoretical foundations and hands-on industry exposure. 
+          Find the course that aligns with your passion and career goals.
+        </p>
+      </div>
+
+      <div class="courses-full-grid">
+
+        <!-- 1. B.Sc Computer Science -->
+        <div class="course-card-full">
+          <div class="ccf-img">
+            <img src="{% static 'images/course_cs.png' %}" alt="B.Sc Computer Science" />
+            <span class="ccf-tag">Undergraduate</span>
+          </div>
+          <div class="ccf-body">
+            <h3>B.Sc Computer Science</h3>
+            <p>
+              Dive deep into the world of computing with our Bachelor of Science in Computer Science. 
+              From programming fundamentals and algorithms to databases, networking, and AI — this 
+              programme equips you with the skills demanded by the tech industry.
+            </p>
+            <div class="ccf-details">
+              <div class="ccf-detail-row">
+                <span class="label">⏱️ Duration</span>
+                <span class="value">3 Years (6 Semesters)</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">🎓 Eligibility</span>
+                <span class="value">10+2 Science (PCM / PCB)</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">📌 Affiliation</span>
+                <span class="value">Bangalore University</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">💺 Seats</span>
+                <span class="value">60 Seats</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- 2. BCA -->
+        <div class="course-card-full">
+          <div class="ccf-img">
+            <img src="{% static 'images/course_cs.png' %}" alt="Bachelor of Computer Applications" />
+            <span class="ccf-tag">Undergraduate</span>
+          </div>
+          <div class="ccf-body">
+            <h3>BCA — Computer Applications</h3>
+            <p>
+              The Bachelor of Computer Applications is an application-focused degree that bridges 
+              technology and real-world software development. Covers full-stack development, 
+              mobile apps, cloud computing, and software project management.
+            </p>
+            <div class="ccf-details">
+              <div class="ccf-detail-row">
+                <span class="label">⏱️ Duration</span>
+                <span class="value">3 Years (6 Semesters)</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">🎓 Eligibility</span>
+                <span class="value">10+2 with Mathematics</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">📌 Affiliation</span>
+                <span class="value">Bangalore University</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">💺 Seats</span>
+                <span class="value">60 Seats</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- 3. B.Com -->
+        <div class="course-card-full">
+          <div class="ccf-img">
+            <img src="{% static 'images/course_business.png' %}" alt="Bachelor of Commerce" />
+            <span class="ccf-tag">Undergraduate</span>
+          </div>
+          <div class="ccf-body">
+            <h3>B.Com — Bachelor of Commerce</h3>
+            <p>
+              Build a strong foundation in accounting, finance, economics, taxation, and business 
+              law. Our B.Com programme is designed to prepare students for careers in banking, 
+              auditing, financial analysis, and entrepreneurship.
+            </p>
+            <div class="ccf-details">
+              <div class="ccf-detail-row">
+                <span class="label">⏱️ Duration</span>
+                <span class="value">3 Years (6 Semesters)</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">🎓 Eligibility</span>
+                <span class="value">10+2 Commerce / Any Stream</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">📌 Affiliation</span>
+                <span class="value">Bangalore University</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">💺 Seats</span>
+                <span class="value">80 Seats</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- 4. BBA -->
+        <div class="course-card-full">
+          <div class="ccf-img">
+            <img src="{% static 'images/course_business.png' %}" alt="Bachelor of Business Administration" />
+            <span class="ccf-tag">Undergraduate</span>
+          </div>
+          <div class="ccf-body">
+            <h3>BBA — Business Administration</h3>
+            <p>
+              Our BBA programme equips aspiring managers and entrepreneurs with skills in marketing, 
+              human resources, operations, and strategic management. Learn from industry leaders 
+              through live projects, case studies, and internships.
+            </p>
+            <div class="ccf-details">
+              <div class="ccf-detail-row">
+                <span class="label">⏱️ Duration</span>
+                <span class="value">3 Years (6 Semesters)</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">🎓 Eligibility</span>
+                <span class="value">10+2 Any Stream</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">📌 Affiliation</span>
+                <span class="value">Bangalore University</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">💺 Seats</span>
+                <span class="value">60 Seats</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- 5. B.A English -->
+        <div class="course-card-full">
+          <div class="ccf-img">
+            <img src="{% static 'images/campus_library.png' %}" alt="B.A English" />
+            <span class="ccf-tag">Undergraduate</span>
+          </div>
+          <div class="ccf-body">
+            <h3>B.A English</h3>
+            <p>
+              Immerse yourself in the richness of English literature, linguistics, and creative 
+              writing. Our B.A English programme develops critical thinking, communication, and 
+              analytical skills that open doors in media, education, publishing, and corporate sectors.
+            </p>
+            <div class="ccf-details">
+              <div class="ccf-detail-row">
+                <span class="label">⏱️ Duration</span>
+                <span class="value">3 Years (6 Semesters)</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">🎓 Eligibility</span>
+                <span class="value">10+2 Any Stream</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">📌 Affiliation</span>
+                <span class="value">Bangalore University</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">💺 Seats</span>
+                <span class="value">60 Seats</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        <!-- 6. M.Sc Computer Science -->
+        <div class="course-card-full">
+          <div class="ccf-img">
+            <img src="{% static 'images/course_cs.png' %}" alt="M.Sc Computer Science" />
+            <span class="ccf-tag">Postgraduate</span>
+          </div>
+          <div class="ccf-body">
+            <h3>M.Sc Computer Science</h3>
+            <p>
+              Elevate your technical expertise with our Master of Science in Computer Science. 
+              Specialise in Artificial Intelligence, Machine Learning, Data Science, Cyber Security, 
+              or Cloud Computing and lead the next generation of technology innovation.
+            </p>
+            <div class="ccf-details">
+              <div class="ccf-detail-row">
+                <span class="label">⏱️ Duration</span>
+                <span class="value">2 Years (4 Semesters)</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">🎓 Eligibility</span>
+                <span class="value">B.Sc CS / BCA / B.Tech</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">📌 Affiliation</span>
+                <span class="value">Bangalore University</span>
+              </div>
+              <div class="ccf-detail-row">
+                <span class="label">💺 Seats</span>
+                <span class="value">40 Seats</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Banner -->
+      <div style="margin-top:60px; text-align:center; background:linear-gradient(135deg,var(--primary),var(--primary-light)); border-radius:20px; padding:56px 32px; color:white; position:relative; overflow:hidden;">
+        <div style="position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"90\" cy=\"10\" r=\"50\" fill=\"rgba(255,255,255,0.04)\"/><circle cx=\"10\" cy=\"90\" r=\"40\" fill=\"rgba(255,255,255,0.04)\"/></svg>');background-size:cover;"></div>
+        <div style="position:relative;z-index:1;">
+          <div class="section-tag" style="color:var(--accent-light);background:rgba(232,160,32,0.18);">Ready to Enroll?</div>
+          <h2 class="section-title" style="color:white;margin-top:10px;">Start Your Journey at <span style="color:var(--accent-light)">Greenwood</span></h2>
+          <p style="color:rgba(255,255,255,0.80);max-width:520px;margin:0 auto 32px;font-size:1rem;line-height:1.75;">
+            Applications are open for the 2024–25 academic year. Limited seats available. 
+            Contact our admissions team today for guidance.
+          </p>
+          <a href="contact.html" class="btn btn-primary" style="font-size:1rem; padding:15px 36px;">Apply Now 🎓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="{% static 'images/college_logo.png' %}" alt="Greenwood College" />
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">Greenwood College</span>
+              <span class="nav-logo-tagline">Excellence in Education</span>
+            </div>
+          </a>
+          <p>Empowering students since 1998 through quality education, industry-ready programmes, and a vibrant campus culture.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Admissions</a>
+            <a href="#">Scholarship</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Programmes</h4>
+          <div class="footer-links">
+            <a href="courses.html">B.Sc Computer Science</a>
+            <a href="courses.html">BCA</a>
+            <a href="courses.html">B.Com</a>
+            <a href="courses.html">BBA</a>
+            <a href="courses.html">B.A English</a>
+            <a href="courses.html">M.Sc Computer Science</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="ci-icon">📍</div>
+              <div class="ci-text"><strong>Address</strong>123 Knowledge Park, Greenwood Nagar, Bangalore — 560001</div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📞</div>
+              <div class="ci-text"><strong>Phone</strong>+91 80 1234 5678</div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">✉️</div>
+              <div class="ci-text"><strong>Email</strong>info@greenwoodcollege.edu.in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Greenwood College. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

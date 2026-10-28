@@ -1,0 +1,404 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenwood College — Excellence in Education</title>
+  <meta name="description" content="Greenwood College offers world-class undergraduate and postgraduate programs in a vibrant campus environment. Explore courses, meet our faculty, and start your journey to excellence." />
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/png" href="{% static 'images/college_logo.png' %}" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+    <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="{% url 'index' %}" class="nav-logo">
+        <img src="{% static 'images/college_logo.png' %}" alt="Greenwood College Logo" /> <!-- Fixed backslash bug -->
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Greenwood College</span>
+          <span class="nav-logo-tagline">Est. 1998 · Excellence in Education</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="{% url 'index' %}" class="active">Home</a>
+        <a href="{% url 'courses' %}">Courses</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'student_list' %}">Student</a>
+        <a href="{% url 'user_login' %}" class="btn btn-login">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-signup">Sign Up</a>
+        <a href="{% url 'contact' %}" class="nav-cta">Apply Now</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="{% url 'index' %}" class="active">Home</a>
+    <a href="{% url 'courses' %}">Courses</a>
+    <a href="{% url 'contact' %}">Contact</a>
+    <a href="{% url 'contact' %}" class="nav-cta">Apply Now</a>
+    
+  </div>
+
+ 
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="{% static 'images/hero_campus.png' %}" alt="Greenwood College Campus" />
+    </div>
+
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Admissions Open 2024–25
+        </div>
+        <h1>
+          Shaping Futures,<br>
+          <em>Building Leaders</em>
+        </h1>
+        <p class="hero-desc">
+          Welcome to Greenwood College — where knowledge meets opportunity. Join a community of 
+          learners driven by curiosity, guided by experienced faculty, and empowered to change the world.
+        </p>
+        <div class="hero-btns">
+          <a href="{% url 'courses' %}" class="btn btn-primary">
+            🎓 Explore Courses
+          </a>
+          <a href="{% url 'contact' %}" class="btn btn-outline">
+            📞 Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS BAR ===================== -->
+  <section class="stats-bar">
+    <div class="stats-inner container">
+      <div class="stat-item">
+        <div class="stat-number" data-count="1000">0</div>
+        <div class="stat-label">🎓 Students Enrolled</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="50">0</div>
+        <div class="stat-label">👨‍🏫 Expert Faculty</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="20">0</div>
+        <div class="stat-label">📚 Programmes Offered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="90">0</div>
+        <div class="stat-label">💼 Placement Rate %</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Image -->
+        <div class="about-img-wrap">
+          <img src="{% static 'images/campus_library.png' %}" alt="Greenwood College Library" class="about-img-main" />
+          <div class="about-img-badge">
+            <span class="badge-num">25+</span>
+            <span class="badge-txt">Years of<br>Excellence</span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-text">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-title">A Legacy of <span>Knowledge & Innovation</span></h2>
+          <div class="divider"></div>
+          <p class="section-desc">
+            Founded in 1998, Greenwood College has been at the forefront of higher education, nurturing 
+            thousands of students into accomplished professionals. Our NAAC-accredited institution 
+            combines academic rigour with practical learning to deliver a truly transformative experience.
+          </p>
+          <p class="section-desc" style="margin-top:14px;">
+            With state-of-the-art infrastructure, a dedicated faculty of subject-matter experts, and 
+            strong industry partnerships, we prepare every student not just for a career — but for life.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feat">
+              <div class="feat-icon">🏛️</div>
+              <div class="feat-text">
+                <h4>NAAC Accredited</h4>
+                <p>Grade A Institution</p>
+              </div>
+            </div>
+            <div class="about-feat">
+              <div class="feat-icon">🌐</div>
+              <div class="feat-text">
+                <h4>Global Partnerships</h4>
+                <p>12+ partner universities</p>
+              </div>
+            </div>
+            <div class="about-feat">
+              <div class="feat-icon">🔬</div>
+              <div class="feat-text">
+                <h4>Research Labs</h4>
+                <p>Modern research facilities</p>
+              </div>
+            </div>
+            <div class="about-feat">
+              <div class="feat-icon">🏆</div>
+              <div class="feat-text">
+                <h4>Award Winning</h4>
+                <p>Best college 3 years running</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="{% url 'courses' %}" class="btn btn-secondary">Our Programmes →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="why-us" id="why">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Why Greenwood</span>
+        <h2 class="section-title">Why Students <span>Choose Us</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          We don't just teach — we inspire, support, and guide each student toward their full potential.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">👨‍🏫</div>
+          <h3>Experienced Faculty</h3>
+          <p>Our professors bring decades of academic and industry experience, offering mentorship that extends far beyond the classroom.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏗️</div>
+          <h3>Modern Infrastructure</h3>
+          <p>Advanced labs, a rich library, smart classrooms, sports facilities, and collaborative workspaces ensure an enriching campus life.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💼</div>
+          <h3>Placement Support</h3>
+          <p>Our dedicated placement cell connects students with top recruiters through campus drives, internships, and career counselling.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎭</div>
+          <h3>Student Activities</h3>
+          <p>From cultural fests and technical clubs to sports and community outreach, student life at Greenwood is dynamic and fulfilling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED COURSES ===================== -->
+  <section class="featured-courses" id="featured">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Popular Programmes</span>
+        <h2 class="section-title">Our <span>Featured Courses</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Choose from a wide range of UG and PG programmes designed to meet the demands of today's dynamic world.
+        </p>
+      </div>
+
+      <div class="courses-grid">
+        <!-- Card 1 -->
+         {% for i in course %}
+        <div class="course-card">
+          <div class="course-img">
+            <img src="{{i.img.url}}" alt="B.Sc Computer Science" />
+            <span class="course-badge">{{i.level}}</span>
+          </div>
+          <div class="course-body">
+            <h3>{{i.name}}</h3>
+            <p>{{i.desc}}</p>
+            <div class="course-meta">
+              <span>⏱️ <strong>{{i.year}}</strong></span>
+              <span>📋 <strong>{{i.eligibility}}</strong></span>
+            </div>
+            <a href="{% url 'detail' i.id %}" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+        {% endfor %}
+
+        <!-- Card 2
+        <div class="course-card">
+          <div class="course-img">
+            <img src="{% static 'images\course_business.png' %}" alt="BBA" />
+            <span class="course-badge">Undergraduate</span>
+          </div>
+          <div class="course-body">
+            <h3>BBA — Business Administration</h3>
+            <p>Develop leadership skills, business acumen, and entrepreneurial thinking through our highly ranked management programme.</p>
+            <div class="course-meta">
+              <span>⏱️ <strong>3 Years</strong></span>
+              <span>📋 <strong>10+2 Any Stream</strong></span>
+            </div>
+            <a href="courses.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+
+        
+        <div class="course-card">
+          <div class="course-img">
+            <img src="{% static 'images\course_cs.png' %}" alt="M.Sc Computer Science" />
+            <span class="course-badge">Postgraduate</span>
+          </div>
+          <div class="course-body">
+            <h3>M.Sc Computer Science</h3>
+            <p>Advance your expertise in AI, machine learning, cloud computing, and software engineering with our PG programme.</p>
+            <div class="course-meta">
+              <span>⏱️ <strong>2 Years</strong></span>
+              <span>📋 <strong>B.Sc / BCA</strong></span>
+            </div>
+            <a href="courses.html" class="btn btn-secondary btn-sm">View Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 48px;">
+        <a href="courses.html" class="btn btn-primary">View All Courses 🎓</a>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- ===================== CAMPUS SECTION ===================== -->
+  <div class="campus-section">
+    <div class="campus-banner">
+      <img src="{% static 'images\campus_outdoor.png' %}" alt="Greenwood College Campus" />
+      <div class="campus-overlay">
+        <div class="campus-content">
+          <span class="section-tag">Our Campus</span>
+          <h2 class="section-title" style="color:white;">A Space Built for <span style="color:var(--accent-light)">Inspiration</span></h2>
+          <div class="divider"></div>
+          <p class="section-desc" style="color:rgba(255,255,255,0.80)">
+            Spread across 25 acres of lush greenery, our campus is a vibrant hub of learning, 
+            creativity, and community — designed to inspire every step of your journey.
+          </p>
+          <a href="{% url 'contact' %}" class="btn btn-primary" style="margin-top:24px; display:inline-flex;">Schedule a Visit →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="{% static 'images\college_logo.png' %}" alt="Greenwood College" />
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">Greenwood College</span>
+              <span class="nav-logo-tagline">Excellence in Education</span>
+            </div>
+          </a>
+          <p>
+            Empowering students since 1998 through quality education, industry-ready programmes, and 
+            a vibrant campus culture that fosters lifelong learning.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-link" aria-label="Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+            <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'courses' %}">Courses</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="#">Admissions</a>
+            <a href="#">Scholarship</a>
+            <a href="#">Campus Life</a>
+          </div>
+        </div>
+
+        <!-- Programmes -->
+        <div class="footer-col">
+          <h4>Programmes</h4>
+          <div class="footer-links">
+            <a href="{% url 'courses' %}">B.Sc Computer Science</a>
+            <a href="{% url 'courses' %}">BCA</a>
+            <a href="{% url 'courses' %}">B.Com</a>
+            <a href="{% url 'courses' %}">BBA</a>
+            <a href="{% url 'courses' %}">B.A English</a>
+            <a href="{% url 'courses' %}">M.Sc Computer Science</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="ci-icon">📍</div>
+              <div class="ci-text">
+                <strong>Address</strong>
+                123 Knowledge Park, Greenwood Nagar,<br>Bangalore, Karnataka — 560001
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">📞</div>
+              <div class="ci-text">
+                <strong>Phone</strong>
+                +91 80 1234 5678
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">✉️</div>
+              <div class="ci-text">
+                <strong>Email</strong>
+                info@greenwoodcollege.edu.in
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Greenwood College. All rights reserved. | Designed with ❤️ for excellence in education.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

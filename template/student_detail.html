@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Student Profile — Greenwood College{% endblock %}
+
+{% block content %}
+<style>
+    /* Cleaned up layout to sit beautifully inside base.html main block */
+    .profile-container {
+        max-width: 700px;
+        margin: 20px auto;
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-header {
+        background-color: #174a8b;
+        color: white;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .profile-header h1 {
+        font-size: 26px;
+        margin: 0;
+    }
+
+    .profile-body {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .profile-body img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #d5e5fa;
+        margin-bottom: 15px;
+    }
+
+    .profile-body h2 {
+        color: #174a8b;
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+
+    .details-list {
+        text-align: left;
+    }
+
+    .detail-row {
+        display: flex;
+        padding: 15px;
+        border-bottom: 1px solid #e2eaf5;
+    }
+
+    .detail-row:nth-child(odd) {
+        background-color: #f5f8fd;
+    }
+
+    .detail-label {
+        width: 40%;
+        font-weight: bold;
+        color: #174a8b;
+    }
+
+    .detail-value {
+        width: 60%;
+        color: #333;
+        overflow-wrap: anywhere;
+    }
+
+    .back-btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 25px;
+        background-color: #174a8b;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.2s;
+    }
+
+    .back-btn:hover {
+        background-color: #0d3568;
+    }
+
+    @media (max-width: 480px) {
+        .detail-row {
+            padding: 12px 8px;
+        }
+
+        .detail-label, .detail-value {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<div class="profile-container">
+
+    <div class="profile-header">
+        <h1>Student Profile</h1>
+    </div>
+
+    <div class="profile-body">
+
+        {% if student.img %}
+            <img src="{{ student.img.url }}" alt="{{ student.name }}">
+        {% else %}
+            <!-- Fallback placeholder avatar if no profile picture is uploaded -->
+            <img src="{% static 'images/default_avatar.png' %}" alt="{{ student.name }}">
+        {% endif %}
+
+        <!-- Fixed variable reference here from 'i.name' to 'student.name' -->
+        <h2>{{ student.name }}</h2>
+
+        <div class="details-list">
+
+            <div class="detail-row">
+                <div class="detail-label">Date of Birth</div>
+                <div class="detail-value">{{ student.dob }}</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Branch</div>
+                <div class="detail-value">{{ student.branch }}</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Phone Number</div>
+                <div class="detail-value">{{ student.ph }}</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Address</div>
+                <div class="detail-value">{{ student.address }}</div>
+            </div>
+
+        </div>
+
+        <a href="{% url 'student_list' %}" class="back-btn">
+            Back to Students
+        </a>
+
+    </div>
+
+</div>
+{% endblock %}

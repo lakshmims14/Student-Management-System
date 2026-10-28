@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Greenwood College{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <link rel="icon" type="image/png" href="{% static 'images/college_logo.png' %}" />
+  
+  <style>
+    /* Force browser viewport layout constraint */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Flex wrapper setup to distribute layout items */
+    .site-layout {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Add space beneath the fixed/absolute navbar so content does not hide behind it */
+    .containerl1 {
+      flex: 1 0 auto;               /* Pushes footer down by consuming empty vertical space */
+      margin-top: 100px;            /* Prevents header overlap */
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Ensure footer stays anchored at the bottom edge */
+    .footer {
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-layout">
+
+    <!-- ===================== SHARED NAVBAR ===================== -->
+    <nav class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <a href="{% url 'index' %}" class="nav-logo">
+          <img src="{% static 'images/college_logo.png' %}" alt="Greenwood College Logo" />
+        </a>
+        <div class="nav-links">
+          <a href="{% url 'index' %}" class="active">Home</a>
+          <a href="{% url 'courses' %}">Courses</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          <a href="{% url 'contact' %}" class="nav-cta">Apply Now</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="{% url 'index' %}" class="active">Home</a>
+      <a href="{% url 'courses' %}">Courses</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'contact' %}" class="nav-cta">Apply Now</a>
+    </div>
+
+    <!-- ===================== UNIQUE PAGE CONTENT ===================== -->
+    <div class="containerl1">
+          {% block content %}{% endblock %}
+    </div>
+
+    <!-- ===================== SHARED FOOTER ===================== -->
+    <footer class="footer">
+      <p>© 2026 Greenwood College. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

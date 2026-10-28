@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %DD STUDENT}A{% endblock %}
+
+{% block content %}
+<h1>Add Student</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <input type="file" name="img" class="form-control" >
+        </div>
+        <div class="col">
+            <input type="text" name="name" class="form-control" placeholder="enter name">
+        </div>
+        <div class="col">
+            <input type="text" name="dob" class="form-control" placeholder="enter dob">
+        </div>
+        <div class="col">
+            <input type="text" name="branch" class="form-control" placeholder="enter branch">
+        </div>
+        <div class="col">
+            <input type="text" name="ph" class="form-control" placeholder="enter ph">
+        </div>
+        <div class="col">
+            <input type="text" name="address" class="form-control" placeholder="enter address">
+        </div>
+        <div class="col">
+            <input type="submit">
+        </div>
+    </div>
+</form>
+{% endblock %}
